@@ -2,45 +2,28 @@
 
 Bonekify is a music streaming web application service similar to Spotify.
 
-Users are able to search and listen to a variety of songs. Surfing and exploring new songs is a breeze as Bonekify has displays for song/album information and list. Bonekify features a song management system for admins to add, change, and delete songs/albums. Admins are also able to see the list of users using the service.
+Users are able to search and listen to a variety of songs. Surfing and exploring new songs is a breeze as Bonekify has displays for song/album information and list. Bonekify features a song management system for admins to add, change, and delete songs/albums. Admins are also able to see the list of users using the service. Users can also listen to premium songs feature. To do so, users can subscribe to the premium singers first which then will be validated by admin from the Binotify Premium App.
 
 Bonekify is built on vanilla HTML, CSS, and JavaScript with native PHP. Data is stored on a MySQL server.
 
 ## Table of Contents
+- [BONEKIFY - Tugas Besar 1 IF3110](#bonekify---tugas-besar-1-if3110)
   - [Table of Contents](#table-of-contents)
-  - [Requirements](#requirements)
-  - [Installation](#installation)
   - [Running the Server](#running-the-server)
   - [Screenshots](#screenshots)
   - [Tasks Allocation](#tasks-allocation)
-## Requirements
-As the server is running on a Docker container, make sure to first install Docker.
-
-You can choose to install Docker with <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a> or a CLI.
-
-## Installation
-Once Docker is installed, run Docker.
-
-To run the server, first build the container. Go to the root directory of the repository and run:
-```
-docker compose up --build
-```
-The command will build and run the container for the first time.
-
-A container will be made with 3 containers inside of it:
-- MySQL server
-- Web server
-- phpMyAdmin
+  - [Perubahan Implementasi](#perubahan-implementasi)
 
 ## Running the Server
-Make sure Docker is running and run:
+Make sure to refer requirements and installations in the Bonekify Config Repository first.
+Then, you can run Docker with the command:
 ```
 docker compose up
 ```
 
-The web application will now be up and running. It is now locally accessible through port 8080.
+The web application will now be up and running. It is now locally accessible through port 1300.
 
-<b><a href="http://localhost:8080/public">http://localhost:8080/public</a></b>
+<b><a href="http://localhost:1300/public">http://localhost:1300/public</a></b>
 
 ## Screenshots
 ![login.png](./public/img/screenshots/login.png)
@@ -53,7 +36,8 @@ The web application will now be up and running. It is now locally accessible thr
 ![tambahlagu.png](./public/img/screenshots/tambahlagu.png)
 ![tambahalbum.png](./public/img/screenshots/tambahalbum.png)
 ![daftaruser.png](./public/img/screenshots/daftaruser.png)
-
+![penyanyipremium.png](./public/img/screenshots/penyanyipremium.png)
+![lagupremium.png](./public/img/screenshots/lagupremium.png)
 
 ## Tasks Allocation
 This project is made by:
@@ -73,3 +57,11 @@ Detail Album | 13520023, 13520151 |  13520023, 13520151
 Tambah Lagu | 13520023 | 13520023, 13520151
 Tambah Album | 13520023 |  13520023, 13520151
 Daftar User | 13520023 | 13520023  
+Penyanyi Premium | 13520094 13520023 | 13520151
+Lagu Premium | 13520094 | 13520151
+
+## Perubahan Implementasi
+Berikut adalah beberapa perubahan implementasi / tambahan fitur yang dilakukan dari Tubes 1 ke 2:
+- Menambahkan halaman daftar penyanyi premium. User dapat melakukan request subscription ke penyanyi.
+- Menambahkan halaman daftar lagu premium. User dapat mendengarkan lagu premium apabilah sudah subscribe ke penyanyinya
+Kedua halaman ini akan memanfaatkan endpoint dari service REST.
