@@ -10,6 +10,7 @@ import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.handler.MessageContext;
 
 import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.Headers;
 import java.text.SimpleDateFormat;
 import java.sql.*;
 import java.util.*;
@@ -107,6 +108,10 @@ public class Subscription {
     try{
       if(check()){
         this.log("validasi subscription","localhost/soap/subscription");
+        MessageContext msgx = this.wsContext.getMessageContext();
+        HttpExchange exchange = (HttpExchange)msgx.get("com.sun.xml.ws.http.exchange");
+        Headers header = exchange.getResponseHeaders();
+        header.put("Cache-Control", Arrays.asList("max-age=1", "stale-while-revalidate=59"));
         DBUtil db = new DBUtil();
         ResultSet rs = db.read(String.format("SELECT status FROM Subscription WHERE creator_id=%d AND subscriber_id=%d",creator_id,subscriber_id));
         if(rs.next()){
