@@ -19,7 +19,7 @@ Bonekify consists of five repositories :
   - [Perubahan Implementasi](#perubahan-implementasi)
 
 ## Running the Server
-Make sure to refer requirements and installations in the Bonekify Config Repository first.
+Please refer to requirements and installations in the Bonekify Config Repository first.
 Then, you can run Docker with the command:
 ```
 docker compose up
