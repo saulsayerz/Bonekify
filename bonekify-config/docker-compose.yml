@@ -1,0 +1,125 @@
+version: '3.3'
+services:
+  bonekify-plain-app:
+    container_name: bonekify-plain-app
+    image: bonekify-plain-app-image:latest
+    restart: always
+    build: .././tugas-besar-1   
+    ports:
+      - 1300:80
+    volumes:
+      - .././tugas-besar-1/:/var/www/html
+      - ".././tugas-besar-1/app/.htaccess:/var/www/html/app/.htaccess"
+  bonekify-premium-app:
+    container_name: bonekify-premium-app
+    image: bonekify-premium-app-image:latest
+    restart: always
+    build: .././bonekify-premium-app
+    ports:
+      - 1301:3000
+    volumes:
+      - '.././bonekify-premium-app:/app'
+      - '/app/node_modules'
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+  
+  bonekify-rest-service:
+    container_name: bonekify-rest-service
+    image: bonekify-rest-service-image:latest
+    restart: always
+    build: .././bonekify-rest-service
+    command: npm start
+    ports:
+      - "1400:3000"
+    volumes:
+      - '.././bonekify-rest-service:/app'
+      - /app/node_modules 
+    depends_on:
+      - db-rest
+  bonekify-soap-service:
+    tty: true
+    container_name: bonekify-soap-service
+    image: bonekify-soap-service-image:latest
+    restart: always
+    build: .././bonekify-soap-service
+    command: bash -c "mvn compile assembly:single && java -jar target/soap-1.0-SNAPSHOT-jar-with-dependencies.jar"
+    ports:
+      - "1401:1401"
+    volumes:
+      - '.././bonekify-soap-service/soap:/soap'
+      - /soap/target
+
+  db-plain:
+    container_name: db-plain
+    image: mysql
+    restart: always
+    ports:
+      - "1500:3306"
+    volumes:
+      - .././tugas-besar-1/dump/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: plain_database
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+  db-plain-gui:
+    container_name: db-plain-gui
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '1501:80'
+    environment:
+      PMA_HOST: db-plain
+      UPLOAD_LIMIT: 1G
+    depends_on:
+      - db-plain
+
+  db-rest:
+    container_name: db-rest
+    image: mysql
+    restart: always
+    ports:
+      - "1502:3306"
+    volumes:
+      - .././bonekify-rest-service/dump/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: rest_database
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+  db-rest-gui:
+    container_name: db-rest-gui
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '1503:80'
+    environment:
+      PMA_HOST: db-rest
+      UPLOAD_LIMIT: 1G
+    depends_on:
+      - db-rest
+
+  db-soap:
+    container_name: db-soap
+    image: mysql
+    restart: always
+    ports:
+      - "1504:3306"
+    volumes:
+      - .././bonekify-soap-service/dump/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: soap_database
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+  db-soap-gui:
+    container_name: db-soap-gui
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '1505:80'
+    environment:
+      PMA_HOST: db-soap
+      UPLOAD_LIMIT: 1G
+    depends_on:
+      - db-soap

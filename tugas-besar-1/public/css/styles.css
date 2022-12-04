@@ -1,0 +1,1045 @@
+/* BAGIAN REGISTER LOGIN START*/
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 800px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-13{width: 12%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-14{width: 37%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+
+@media only screen and (min-width: 1280px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-13{width: 12%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-14{width: 37%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+.center {
+    text-align: center;
+    margin : 0 auto;
+}
+
+#register-page{
+    margin: 50px; 
+    font-family: spotify-circular, Helvetica, Arial, sans-serif;
+}
+
+#register-form{
+    text-align: left;
+}
+
+#register-form label {
+    font-weight:bold;
+}
+
+#register-form input, #register-form label{
+    display: block;
+}
+
+#register-form input{
+    width: 100%;
+    padding: 12px 20px;
+    margin-top:5px;
+    margin-bottom: 30px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    background-color: white;
+  }
+
+  #register-form input[class=green]:focus {
+    outline:none;
+    border: 3px solid green;
+  }
+  #register-form input[class=red]:focus {
+    outline:none;
+    border: 3px solid red;
+  }
+
+  #register-form input[class=green] {
+    border: 2px solid green;
+  }
+  #register-form input[class=red]{
+    border: 2px solid red;
+  }
+
+  
+  #register-form input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+  }
+
+  #register-form p {
+    margin-top:5px;
+    margin-bottom:30px;
+  }
+  
+  #register-form input[type=submit]:hover {
+    transition: 0.3s;
+    background-color: #45a049;
+  }
+
+  .TOA {
+    box-sizing: border-box;
+    font-family: spotify-circular, Helvetica, Arial, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    padding: 0px 0px 1em;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.25px;
+    color: inherit;
+  }
+
+  #submitWarning{
+    color: red;
+    text-align: center;
+  }
+
+  #submitWarning p{
+    -webkit-transition: all 1.7s ease;
+    transition: all 1.7s ease;
+  }
+
+/* BAGIAN REGISTER END */
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    margin:auto;
+}
+
+#bodyflex {
+  display:flex;
+  flex-direction:row;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: rgb(19, 18, 18);
+    overflow: hidden;
+    padding:15px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a, .topnav button {
+    color: #b3b3b3;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight:600;
+}
+
+/* Change the color of links on hover */
+.topnav > a:hover {
+  transition: 0.3s;
+    color: white;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    color: white;
+}
+
+.topnav img {
+    width:55px;
+    margin-right:100px;
+    float:left;
+}
+
+.topnav input[type=text] {
+    height:40px;
+    border-radius: 20px;
+    text-indent: 20px;
+    margin-top:6px;
+    margin-right:100px;
+    margin-left:150px;
+}
+
+.dropdown{
+    margin-left:auto;
+}
+
+.dropdown button{
+    background:black;
+    color:white;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 128px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+#main{
+  width:100%;
+  margin:0px;
+  padding: 0px;
+  background-color: #1f1f1f;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+#list-lagu{
+  margin: 0 auto;
+  padding-bottom: 5vw;
+  border-collapse: collapse;
+}
+
+#list-lagu tr th {
+    color: #b3b3b3;
+    font-size: 12px;
+    font-weight:100;
+    letter-spacing: 1px;
+    padding-top:20px;
+    padding-bottom:20px;
+    text-align:left;
+    border-bottom: 1px solid #b3b3b3;
+    line-height: 1em;
+}
+
+#list-lagu tr td img{
+    width : 50px;
+    margin:0;
+    padding:0;
+}
+
+#list-lagu tr td {
+    color : #b3b3b3;
+}
+
+#list-lagu tr .judul-lagu a {
+  color: white;
+  width: 20vw;
+  text-align:left;
+  float:left;
+  padding-left:0px;
+  padding-bottom:10px;
+  text-decoration: none; 
+}
+
+#list-lagu tr .tahun-terbit{
+  width:20vw;
+}
+
+#list-lagu tr .genre{
+  width:25vw;
+}
+
+#list-lagu tr td .penyanyi{
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+
+.list-lagu-item:hover {
+  transition: 0.3s;
+  background-color: #414141cf;
+}
+
+.tabel-lagu-img {
+  padding: 14px 16px 14px 0px !important;
+}
+
+#logo {
+  max-width:200px;
+    height:auto;
+}
+
+/* FOR ERROR PAGE */
+
+#error-page{
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  right: 15%;
+  bottom: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+}
+#error-page .content{
+  max-width: 600px;
+  text-align: center;
+}
+.content h2.header{
+  font-size: 10vw;
+  line-height: 1em;
+  position: relative;
+}
+.content h2.header:after{
+  position: absolute;
+  content: attr(data-text);
+  top: 0;
+  left: 0;
+  right: 0;
+  background: -webkit-repeating-linear-gradient(-45deg, #71b7e6, #69a6ce, #b98acc, #ee8176, #b98acc, #69a6ce, #9b59b6);
+  background-size: 400%;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.25);
+  animation: animate 10s ease-in-out infinite;
+}
+.content h4{
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #000;
+  font-size: 2em;
+  max-width: 600px;
+  position: relative;
+}
+.content h4:after{
+  position: absolute;
+  content: attr(data-text);
+  top: 0;
+  left: 0;
+  right: 0;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.4);
+  -webkit-text-fill-color: transparent;
+}
+.content p{
+  font-size: 1.2em;
+  color: #0d0d0d;
+}
+
+#container-putar-lagu{
+  width:350px;
+  margin: auto;
+  padding: 30px 0px;
+}
+
+#container-putar-lagu img{
+  width: 100%;
+  margin:auto;
+  display:block;
+  padding-bottom: 5px;
+}
+
+#container-putar-lagu #img-container{
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+#container-putar-lagu #judul{
+  color:white;
+  font-family: spotify-circular, Helvetica, Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.25px;
+  padding-bottom:5px;
+}
+
+#container-putar-lagu .deskripsi{
+  color:#b3b3b3;
+  font-size: 20px;
+  padding: 2px 0 2px 0;
+}
+
+#container-putar-lagu audio{
+  width: 100%;
+  filter:invert(100%);
+  margin-top: 20px;
+}
+
+#container-putar-lagu audio::-webkit-media-controls-panel{
+  width:100%;
+  background-color: #e0e0e0;
+}
+
+#container-putar-lagu audio::-webkit-media-controls-timeline-container{
+  background-color: #e0e0e0;
+}
+
+/* The dropdown container */
+.dropdown {
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  border: 1px solid cadetblue;
+  transition: 0.3s;
+  border-radius:5px;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  transition: 0.3s;
+  background-color: rgb(142, 255, 142);
+  color: black;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  transition: 0.3s;
+  display: block;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 500px; /* Could be more or less, depending on screen size */
+}
+
+.modal-content form label{
+  color:black !important;
+  font-size: 20px !important;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#tombol-ganti-judul{
+  margin-left: 10px;
+  background-color: #1f1f1f;
+  padding: 7px 15px !important;
+  border-radius: 15px;
+  border : 1px solid white !important;
+  color:white !important;
+}
+
+#tombol-ganti-judul:hover{
+  transition: 0.3s;
+  cursor: pointer;
+  background-color: white;
+  color: #0d0d0d !important;
+}
+
+.tombol-ganti-file{
+  background-color: #ffffff;
+  margin-top: 3px;
+  padding: 7px 15px !important;
+  border : 1px solid white;
+  border-radius: 15px;
+  color:#000000 !important;
+}
+
+.tombol-ganti-file:hover{
+  transition: 0.3s;
+  cursor: pointer;
+  background-color: #000000;
+  border : 1px solid white;
+  border-radius: 15px;
+  color:#ffffff !important;
+}
+
+
+.tombol-ganti-deskripsi{
+  background-color: #1f1f1f;
+  border-radius: 15px;
+  padding: 7px 15px !important;
+  border : 1px solid #b3b3b3;
+  color:#b3b3b3 !important;
+}
+
+.tombol-ganti-deskripsi:hover{
+  transition: 0.3s;
+  cursor: pointer;
+  background-color: #b3b3b3;
+  color:#0d0d0d !important;
+}
+
+.tombol-hapus{
+  background-color:rgba(255, 0, 0, 0.638);
+  color:rgba(255, 255, 255, 0.667);
+  border : none;
+  border-radius: 15px;
+  padding: 7px 12px !important;
+  margin-top:10px;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+.tombol-hapus:hover{
+  background-color:red;
+  color:white;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* ANIMATION */
+@-webkit-keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* SIDEBAR */
+#sidebar{
+  background-color: black;
+  display:flex;
+  flex-direction:column;
+  text-align: center;
+}
+
+#side {
+  width:100%;
+  display:flex;
+  flex-direction: column;
+}
+
+#bodyflex a, #bodyflex button {
+  color: #b3b3b3;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight:600;
+}
+
+/* Change the color of links on hover */
+#bodyflex > a:hover {
+  transition: 0.3s;
+  color: white;
+}
+
+/* Add a color to the active/current link */
+#bodyflex a.active {
+  color: white;
+}
+
+#headerlogo{
+  margin:20px auto;
+  width:112px;
+}
+
+.container{
+  display:flex;
+  flex-direction: column;
+}
+
+#list-album-heading{
+  padding-top: 15px;
+  color: white; 
+  margin: 0 auto;
+  width: 80%;
+}
+
+
+/* For List User */
+
+#list-user-heading{
+  padding-top: 15px;
+  color: white; 
+  margin: 0 auto;
+  width: 75%;
+}
+
+#list-user{
+  margin: 0 auto;
+  width: 75%;
+  border-collapse: collapse;
+}
+
+#list-user tr th {
+    color: #b3b3b3;
+    font-size: 12px;
+    font-weight:100;
+    letter-spacing: 1px;
+    padding-top:20px;
+    padding-bottom:20px;
+    text-align:center;
+    border-bottom: 1px solid #b3b3b3;
+    line-height: 1em;
+}
+
+#list-user tr td {
+    color : #b3b3b3;
+    padding-top:20px;
+    padding-bottom:20px;
+    text-align: center;
+}
+
+.list-user-item:hover {
+  transition: 0.3s;
+  background-color: #414141cf;
+}
+
+#list-user tr .bold{
+  color: white;
+}
+
+#list-user tr .id{
+    width:10vw;
+}
+
+#list-user tr .username{
+  width:20vw;
+}
+
+#list-user tr .email{
+  width:30vw;
+}
+
+#list-user tr .admin{
+  width:20vw;
+}
+
+#list-user tr .playcount{
+  width:20vw;
+}
+
+.nomertabel{
+  width:5vw;
+  text-align: center;
+}
+
+#search {
+  height:40px;
+  border-radius: 20px;
+  text-indent: 20px;
+  margin: 0 auto;
+}
+
+#search::placeholder{
+  text-align: center;
+}
+
+#checkboxes {
+  align-items: center;
+  justify-content: center;
+  margin : 0 auto;
+  display: flex;
+  flex-direction: row;
+  color:white;
+}
+
+.main-section {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 240px;
+  height: 350px;
+  padding-top:20px;
+  border-radius: 8px;
+  background: rgba(40,40,40,255);
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card img{
+  width:85%;
+  margin: auto;
+  display:block;
+  border-radius:5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-sizing: border-box;
+}
+
+.clickable{
+  padding:0;
+  text-align:left !important;
+  margin:0!important;
+}
+
+.card:hover{
+  box-shadow: 0 4px 8px 0 rgba(100, 100, 100, 0.2), 0 6px 20px 0 rgba(100, 100, 100, 0.19);
+}
+
+.judul-album{
+  color:white;
+  font-size: 16px !important;
+  margin-left:20px;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+.deskripsi-album{
+  color:#b3b3b3;
+  margin-left:20px;
+  padding-top:2px;
+  padding-bottom:2px;
+}
+
+#detail-album{
+  display:flex;
+  flex-direction: row;
+}
+
+#detail-album > span {
+  margin-top:60px;
+  margin-left:60px;
+}
+
+#detail-album span img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width : 300px;
+}
+
+#detail-album span .judul-album-detail{
+  color:white;
+  font-size: 80px;
+  padding-bottom:10px;
+}
+
+#detail-album span .deskripsi-album-detail{
+  color:#b3b3b3;
+  font-size: 20px;
+  padding-top:5px;
+}
+
+label[for*=sort] {
+  color:white;
+}
+
+#sorts {
+  padding-top:30px;
+  margin : 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+#sorts > label {
+  margin: 5px;
+}
+#sorts > select{
+  margin:2px;
+  background-color: #1F1F1F;
+  color:white;
+}
+
+#labelfilter{
+  color:white;
+  margin:0 auto;
+  text-align: center;
+}
+
+#labelfilter h1{
+  text-decoration: underline;
+}
+/* Tambah Album Form */
+#tambah-form{
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+#tambah-form h1, #judulsearch {
+  padding-top: 15px;
+  text-align: center;
+  color: white;
+}
+
+#tambah-form label {
+  color: white;
+  font-weight:bold;
+}
+
+#tambah-form input, #tambah-form label, #tambah-form select{
+  display: block;
+}
+
+#tambah-form input, #tambah-form select{
+  width: 100%;
+  padding: 12px 20px;
+  margin-top:8px;
+  margin-bottom: 30px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: white;
+}
+
+#tambah-form input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+#tambah-form p {
+  margin-top:5px;
+  margin-bottom:30px;
+}
+
+#tambah-form input[type=submit]:hover {
+  transition: 0.3s;
+  background-color: #45a049;
+}
+
+.centergambarpak{
+  margin:0 auto;
+}
+
+.hiddenCB {
+  text-align: center;
+}
+
+.hiddenCB div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+}
+
+.hiddenCB input[type="checkbox"],
+.hiddenCB input[type="radio"] {
+  display: none;
+  margin-bottom:20px;
+}
+
+.hiddenCB label {
+  
+  cursor: pointer;
+  transition: all .6s;
+  margin-right:2%;
+  margin-left:2%;
+  margin-bottom:20px;
+  color:white;
+  border: 2px solid darkslategray;
+  border-radius: 8px;
+  padding:5px;
+}
+
+.hiddenCB input[type="checkbox"]+label:hover{
+  background: rgba(0, 128, 128, .8);
+}
+
+.hiddenCB input[type="checkbox"]:checked+label {
+  background: rgba(0, 128, 128, .4);
+}
+
+.hiddenCB input[type="checkbox"]:checked+label:hover{
+  background: rgba(0, 128, 128, 0, .7);
+}
+
+#labelfilter {
+  font-size: 10px;
+  margin-bottom:20px;
+}
+#form-hapus-album{
+  padding-left:60px;
+}
+
+#gaadacontainer{
+  margin: 0 auto;
+}
+
+.kagakada{
+  color:white;
+  text-align: center;
+  margin: 0 auto;
+  margin-top:10px;
+  padding:50px;
+  border: 2px solid white;
+}
+
+.pagination {
+  text-align:center;
+  margin:0 auto;
+  padding-top:30px;
+  width:400px;
+  padding-bottom: 50px;
+}
+
+.pagination button {
+  border:none;
+  background: none;
+  text-decoration: none;
+  padding: 0 8px;
+}
+
+.pagination button:hover {
+  transition: 0.3s;
+  background-color: greenyellow;
+  color: red !important;
+  text-decoration: none;
+}
+
+.pagination button:active{
+  background-color: green;
+  text-decoration: none;
+} 
+
+.pagination button[class=dipilih] {
+  background-color: green;
+  color: white !important;
+}
+
+.judullagupremium {
+  color: white
+}
+
+.subsbutton{
+  font-size: 20px;
+  background-color: RGBA(200,20,20,0.7);
+  border-radius:30px;
+  width:9vw;
+  height:3vw;
+}
+
+.subsbutton:hover {
+  background-color: RGBA(150,20,20,1);
+  color: white !important;
+  cursor: pointer;
+}
+
+.listenbutton{
+  color: black !important;
+  font-size: 20px;
+  background-color: RGBA(20,230,20,0.7);
+  border-radius:30px;
+  width:9vw;
+  height:3vw;
+}
+
+.listenbutton:hover {
+  background-color: RGBA(20,150,20,1);
+  color: white !important;
+  cursor: pointer;
+}
+
+.putarpremium{
+  text-align: center;
+  margin: 0 auto;
+}
+
+.putarpremium{
+  width: 100%;
+  filter:invert(100%);
+  margin: 5px 5px 0px 0px;
+}
+
+.putarpremium::-webkit-media-controls-panel{
+  width:100%;
+  background-color: #e0e0e0;
+}
+
+.putarpremium::-webkit-media-controls-timeline-container{
+  background-color: #e0e0e0;
+}
+
+.lagupremiumkiri {
+  width: 40%;
+}
+.lagupremiumkanan {
+  width: 60%;
+}
